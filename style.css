@@ -1,0 +1,33 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.background {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+.background-head {
+  width: 100%;
+  height: 150px;
+  background-color: #1EBDA4;
+}
+
+.background-main {
+  width: 100%;
+  height: calc(100% - 150px);
+  background-color: #CFD3CF;
+}
+
+.chat-container {
+  width: 75%;
+  height: 90%;
+  background-color: red;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
