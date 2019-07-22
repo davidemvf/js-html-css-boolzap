@@ -31,3 +31,28 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+header {
+  width: 100%;
+  height: 60px;
+  background: green;
+  display: flex;
+}
+
+.header-left {
+  width: 35%;
+  height: 100%;
+  background: pink;
+}
+
+.header-right {
+  width: 65%;
+  height: 100%;
+  background: black;
+}
+
+aside {
+  height: calc(100% - 60px);
+  width: 35%;
+  background: purple;
+}
