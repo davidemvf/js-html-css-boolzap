@@ -55,4 +55,53 @@ aside {
   height: calc(100% - 60px);
   width: 35%;
   background: purple;
+  float: left;
+}
+
+.notification {
+  width: 100%;
+  height: 60px;
+  background: lightblue;
+}
+
+.search {
+  width: 100%;
+  height: 45px;
+  background: violet;
+}
+
+.crono-chat {
+  width: 100%;
+  height: calc(100% - 105px);
+  background: yellow;
+  overflow: auto;
+}
+
+.past-chat {
+  width: 100%;
+  height: calc(100% / 8);
+  background: green;
+  border: 1px solid black;
+
+}
+
+.chat-box {
+  width: 65%;
+  height: calc(100% - 60px);
+  background-color: blue;
+  float: left;
+}
+
+.messages {
+  width: 100%;
+  height: calc(100% - 70px);
+  background: brown;
+  overflow: auto;
+  font-size: 40px;
+}
+
+.text-box {
+  width: 100%;
+  height: 70px;
+  background: orange;
 }
