@@ -27,32 +27,66 @@
 
           </div>
           <div class="search">
-
+            <input id = "search-bar" type="text" placeholder="Search" value="">
           </div>
           <div class="crono-chat">
             <div class="past-chat">
-
+              <img src="immagini/avatar_1.jpg" alt="">
+              <div class="contact">
+                <p>Michele</p>
+                <p class="last-msg">ok</p>
+              </div>
+              <p class="last-msg">16:24</p>
             </div>
             <div class="past-chat">
-
+              <img src="immagini/avatar_2.jpg" alt="">
+              <div class="contact">
+                <p>Fabio</p>
+                <p class="last-msg">non poteva essere altrimenti</p>
+              </div>
+              <p class="last-msg">17:04</p>
             </div>
             <div class="past-chat">
-
+              <img src="immagini/avatar_3.jpg" alt="">
+              <div class="contact">
+                <p>Samuele</p>
+                <p class="last-msg">forza palermo</p>
+              </div>
+              <p class="last-msg">17:27</p>
             </div>
             <div class="past-chat">
-
+              <img src="immagini/avatar_4.jpg" alt="">
+              <div class="contact">
+                <p>Alessandro B.</p>
+                <p class="last-msg">maledetto Zamparini</p>
+              </div>
+              <p class="last-msg">18:01</p>
             </div>
             <div class="past-chat">
-
+              <img src="immagini/avatar_5.jpg" alt="">
+              <div class="contact">
+                <p>Alessandro L.</p>
+                <p class="last-msg">arrestatelo</p>
+              </div>
+              <p class="last-msg">19:14</p>
             </div>
             <div class="past-chat">
-
+              <img src="immagini/avatar_6.jpg" alt="">
+              <div class="contact">
+                <p>Claudia</p>
+                <p class="last-msg">uccidetelo</p>
+              </div>
+              <p class="last-msg">20:54</p>
             </div>
             <div class="past-chat">
-
+              <img src="immagini/avatar_7.jpg" alt="">
+              <div class="contact">
+                <p>Davide</p>
+                <p class="last-msg">ho fame</p>
+              </div>
+              <p class="last-msg">22:24</p>
             </div>
           </div>
-
         </div>
 
         <!-- secondo blocco: info destinatario, chat-box, editor -->
@@ -68,9 +102,9 @@
 
                 </div>
               </div> -->
-              <div class="user white">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              </div>
+              <!-- <div class="user white">
+
+              </div> -->
 
             </div>
 
@@ -78,8 +112,11 @@
           </div>
           <div class="text-box">
             <i class="far fa-smile"></i>
-            <input type="text" id="text-message" value="Scrivi un messaggio">
-            <i class="fas fa-microphone"></i>
+            <input type="text" id="text-message" value="" placeholder="Scrivi un messaggio">
+            <div class="send-rec">
+              <i class="fas fa-microphone"></i>
+              <i class="fas fa-paper-plane"></i>
+            </div>
 
           </div>
 
@@ -87,6 +124,18 @@
       </div>
     </div>
 
+    <!-- template per la risposta -->
+    <div class="template">
+      <div class="user white">
+
+      </div>
+    </div>
+
     <script type="text/javascript" src="script.js"></script>
   </body>
 </html>
+
+<!-- non riesco a far comparire l'areoplanino alla compilazione del messaggio;
+perchè quando clicco sull'input text mi compare un bordo azzurro?
+quando i messaggi vanno aggiungendosi la finestra resta fissa e non scrolla verso il basso, come fare?
+scrivendo una parola lunga, superata la lunghezza massima le lettere escono fuori dal box-->
