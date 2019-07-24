@@ -96,11 +96,12 @@
   width: 100%;
   height: calc(100% - 165px);
   overflow: auto;
+  background-color: white;
 }
 
 .past-chat {
   width: 100%;
-  height: calc(100% / 7);
+  height: 60.89px;
   background: #FFFFFF;
   border-bottom: 1px solid lightgray;
   display: flex;
