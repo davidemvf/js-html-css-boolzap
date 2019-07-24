@@ -17,7 +17,7 @@ $(document).ready(function() {
     );
     //
     $("#text-message").val("");
-    
+
 
      setTimeout(answer, 1000);
 
@@ -48,7 +48,18 @@ $(document).ready(function() {
 
       if (!contatto.includes(letter)) {
         $(this).hide();
-      }
-    })
+      };
+    });
+  });
+
+  //funzione per far apparire la conversazione al click sul contatto
+
+  // creo una funzione che si attiva al click sul box del contatto
+  $(".past-chat").click(function() {
+    // al click il box clickato diventa grigio scuro, gli altri rimangono bianchi
+    $(".past-chat").css("background", "white");
+    $(this).css("background", "#E9EBEB");
   })
+
+  //al click all'interno del box compare un div contenente la conversazione con il contatto clickato (provo a creare un template da inserire nel box delle conversazioni)
 });
