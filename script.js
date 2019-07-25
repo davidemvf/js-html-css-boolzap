@@ -57,7 +57,7 @@ $(document).ready(function() {
   $(".past-chat").click(function() {
     // una volta clickato sul contatto questo diventa più scuro
     $(".past-chat").css("background", "white");
-    $(this).css("background", "#E9EBEB");
+    $(this).css("background", "lightgray");
 
 
     // salvo in una variabile il valore dell'attributo del div selezionato
