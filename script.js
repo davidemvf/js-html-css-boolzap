@@ -52,22 +52,35 @@ $(document).ready(function() {
     });
   });
 
-  //funzione per far apparire la conversazione al click sul contatto
+  //funzione per far apparire al click sul contatto la rispettiva conversazione e le informazioni sulla barra in alto
 
   $(".past-chat").click(function() {
-    // una volta clickato sul contatto:
-    // questo diventa più scuro
+    // una volta clickato sul contatto questo diventa più scuro
     $(".past-chat").css("background", "white");
     $(this).css("background", "#E9EBEB");
 
+
     // salvo in una variabile il valore dell'attributo del div selezionato
     var attr_comparsa = $(this).attr("ref");
+    // salvo in variabile il nome del contatto
+    var nome = $(this).find(".name").text();
+    //salvo in variabile l'immagine del contatto
+    var img = $(this).find("img").attr("src");
+
+    //scompare la finestra introduttiva
+    $(".intro").css("display", "none");
 
     //tutte le altre conversazioni devono sparire dal box
     $(".messages-centering").removeClass("active");
 
     //il div con lo stesso valore dell'attributo ref compare nel box
     $(".messages-centering[ref='" + attr_comparsa + "']").addClass("active");
+
+    // il nome viene visualizzato nella barra in alto
+    $("#name").text(nome);
+
+    //l'immagine del profilo viene visualizzata nella barra in alto
+    $(".header-right img").attr("src",img);
 
   });
 });
