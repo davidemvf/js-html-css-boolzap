@@ -8,6 +8,10 @@
   display: none;
 }
 
+.active {
+  display: block;
+}
+
 /* background */
 .background {
   width: 100vw;
@@ -138,8 +142,14 @@ div.past-chat img{
   width: 80%;
   height: 90%;
   margin: 20px auto;
+  display: none;
 
 }
+
+.active {
+  display: block;
+}
+
 
 .user-container {
   width: 100%;

@@ -12,7 +12,7 @@ $(document).ready(function() {
     var inputext = $("#text-message").val();
 
 
-    $(".messages-centering").append(
+    $(".messages-centering.active").append(
       '<div class="user-container">' + '<div class="user">' + inputext + '</div>' + '</div>'
     );
     //
@@ -24,7 +24,7 @@ $(document).ready(function() {
      function answer() {
        var reply = $(".template .white").clone();
        reply.text("Ciao");
-       $(".messages-centering").append(reply);
+       $(".messages-centering.active").append(reply);
      }
 
   })
@@ -54,12 +54,20 @@ $(document).ready(function() {
 
   //funzione per far apparire la conversazione al click sul contatto
 
-  // creo una funzione che si attiva al click sul box del contatto
   $(".past-chat").click(function() {
-    // al click il box clickato diventa grigio scuro, gli altri rimangono bianchi
+    // una volta clickato sul contatto:
+    // questo diventa più scuro
     $(".past-chat").css("background", "white");
     $(this).css("background", "#E9EBEB");
-  })
 
-  //al click all'interno del box compare un div contenente la conversazione con il contatto clickato (provo a creare un template da inserire nel box delle conversazioni)
+    // salvo in una variabile il valore dell'attributo del div selezionato
+    var attr_comparsa = $(this).attr("ref");
+
+    //tutte le altre conversazioni devono sparire dal box
+    $(".messages-centering").removeClass("active");
+
+    //il div con lo stesso valore dell'attributo ref compare nel box
+    $(".messages-centering[ref='" + attr_comparsa + "']").addClass("active");
+
+  });
 });
