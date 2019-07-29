@@ -1,33 +1,50 @@
 $(document).ready(function() {
 
-
-
-   // if ($("#text-message").val() !== null) {
-   //   $(".fa-microphone").hide();
-   //   $(".fa-paper-plane").css("display", "block");
-   // }
-
+  // funzione per mandare messaggi con la rispettiva ora
   $(".send-rec").click(function() {
 
+    // richiamo il template e lo compilo tramite handlebars
+    var source = $("#msg-template").html();
+    var template = Handlebars.compile(source);
+
+    // salvo l'ora di invio e ricezione messaggi
+    var data = new Date();
+    var ore, minuti;
+    ore = data.getHours();
+    minuti = data.getMinutes();
+    var clock = ore + ":" + minuti;
     var inputext = $("#text-message").val();
 
+    // vado a inserire testo e ora nel template
+    var context = {text: inputext, time: clock};
+    var html = template(context);
 
-    $(".messages-centering.active").append(
-      '<div class="user-container">' + '<div class="user">' + inputext + '</div>' + '</div>'
-    );
-    //
+    // stampo a schermo il messaggio
+    $(".messages-centering.active").append(html);
+
+    // visualizzo ultimo accesso nell'header
+    var last_time = $(".messages-centering.active .user .clock").text();
+    $("#last-access").text(last_time);
+
+    // pulisco l'input
     $("#text-message").val("");
 
-
+    //messaggio di risposta in un secondo
      setTimeout(answer, 1000);
 
-     function answer() {
-       var reply = $(".template .white").clone();
-       reply.text("Ciao");
-       $(".messages-centering.active").append(reply);
-     }
+    function answer() {
+      var context_risp = {text: "Ciao bello", time: clock, addclass: "white"};
+      var html_risp = template(context_risp);
 
-  })
+      // var reply = $(".template .white").clone();
+      // var time = $(".clock").text();
+      // reply.text("Ciao");
+      // $(".past-chat > p").text(clock);
+      $(".messages-centering.active").append(html_risp);
+  };
+
+  });
+
 
   //funzione per la ricerca dei contatti
 
@@ -56,8 +73,8 @@ $(document).ready(function() {
 
   $(".past-chat").click(function() {
     // una volta clickato sul contatto questo diventa più scuro
-    $(".past-chat").css("background", "white");
-    $(this).css("background", "lightgray");
+    $(".past-chat").removeClass("js-lightgray");
+    $(this).addClass("js-lightgray");
 
 
     // salvo in una variabile il valore dell'attributo del div selezionato
@@ -83,4 +100,17 @@ $(document).ready(function() {
     $(".header-right img").attr("src",img);
 
   });
+
+  // funzione per sostituire l'icona rec con l'icona send-message
+
+  $('#text-message').focus(function() {
+      $('.fa-microphone').hide();
+      $('.fa-paper-plane').show();
+    });
+
+  $('#text-message').focusout(function() {
+      $('.fa-microphone').show();
+      $('.fa-paper-plane').hide();
+    });
+
 });

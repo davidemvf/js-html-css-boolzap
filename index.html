@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
     <link rel="stylesheet" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.2/handlebars.min.js"></script>
     <title></title>
   </head>
   <body>
@@ -88,7 +89,7 @@
                 <p class="name" >Davide</p>
                 <p class="last-msg">ho fame</p>
               </div>
-              <p class="last-msg">22:24</p>
+              <p class="last-msg"></p>
             </div>
           </div>
         </div>
@@ -116,7 +117,7 @@
             <div class="name-status">
               <p id="name"><strong></strong></p>
               <p id="status">Ultimo accesso alle: </p>
-              <span>orario</span>
+              <span id="last-access"></span>
             </div>
             <div class="actions">
               <i class="fas fa-search"></i>
@@ -172,11 +173,13 @@
     </div>
 
     <!-- template -->
-    <div class="template">
-      <div class="user white">
-
+    <script id="msg-template" type="text/x-handlebars-template">
+      <div class="user {{addclass}}">
+        {{text}}
+        <div class="clock"> {{time}} </div>
       </div>
-    </div>
+    </script>
+
 
     <script type="text/javascript" src="script.js"></script>
   </body>
